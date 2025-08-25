@@ -9,16 +9,16 @@ const NavBar = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
-  // const handleLogout = async () => {
-  //   try {
-  //     await axios.post(BASE_URL + "/logout", {}, { withCredentials: true });
-  //     dispatch(removeUser());
-  //     return navigate("/login");
-  //   } catch (err) {
-  //     // Error logic maybe redirect to error page
-  //     console.log(err);
-  //   }
-  // };
+  const handleLogout = async () => {
+    try { 
+      await axios.post(BASE_URL + "/logout", {}, { withCredentials: true });
+      dispatch(removeUser());
+      return navigate("/login");
+    } catch (err) {
+      // Error logic maybe redirect to error page
+      console.log(err);
+    }
+  };
 
   return (
     <div className="navbar bg-base-300">
@@ -60,9 +60,9 @@ const NavBar = () => {
               <li>
                 <Link to="/premium">Premium</Link>
               </li>
-              {/* <li>
+              <li>
                 <a onClick={handleLogout}>Logout</a>
-              </li> */}
+              </li>
             </ul>
           </div>
         </div>
