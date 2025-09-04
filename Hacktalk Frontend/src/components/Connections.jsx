@@ -15,7 +15,7 @@ const Connections = () => {
             const res=  await axios.get(BASE_URL+"/user/connections",{
                 withCredentials:true,
             });
-            console.log(res);
+            console.log(res.data.data);
             dispatch(addConnections(res.data.data));
             
 
@@ -33,7 +33,7 @@ const Connections = () => {
     }
   return (
     <div className="text-center my-10">
-      <h1 className="text-bold text-white text-3xl">Connections</h1>
+      <h1 className="text-bold text-3xl">Connections</h1>
 
       {connections.map((connection) => {
         const { _id, firstName, lastName, photoUrl, age, gender, about } =
