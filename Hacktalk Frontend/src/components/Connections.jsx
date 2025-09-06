@@ -41,7 +41,7 @@ const Connections = () => {
 
         return (
           <div
-            key={_id}
+            key={_id} //alwasy forget the key
             className="flex m-4 p-4 rounded-lg bg-base-300 w-1/2 mx-auto"
           >
             <div>
